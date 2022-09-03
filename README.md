@@ -1,3 +1,3 @@
-# What do you call a tuna wearing a bowtie?
+# People who don’t use punctuation should be punished.
 
-# Sofishticated 
+# They deserve a long sentence
