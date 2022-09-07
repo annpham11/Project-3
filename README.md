@@ -2,10 +2,10 @@
 
 # Development 
 
-## Steps steps
+## Project setup
 
-``` npm init -y 
-npm install express
+``` 
+npm install 
 npm install nodemon --save-dev 
 ```
 
@@ -16,3 +16,19 @@ npx nodemon
 
 or npm start 
 ``` 
+
+## Run dev server 
+
+``` 
+cd client
+npm start 
+``` 
+
+## Build frontend and serve frontend with api
+
+``` 
+cd client
+npm run build
+cd ..
+npm start
+```
