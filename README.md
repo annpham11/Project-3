@@ -31,3 +31,14 @@ npm run build
 cd ..
 npm start
 ```
+
+
+## Deploying to heroku
+```
+cd client
+npm run build
+cd ..
+git add .
+git commit -m "heroku build"
+git push heroku BRANCH-NAME:main
+```
