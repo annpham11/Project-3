@@ -13,7 +13,6 @@ npm install nodemon --save-dev
 
 ``` 
 npx nodemon
-
 or npm start 
 ``` 
 
