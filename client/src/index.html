@@ -122,10 +122,11 @@
     </footer> 
 
     <!-- Navigation Active-->
-    <script>
+    <!-- <script>
       $(document).ready(function() {
-          $( ".nav-item" ).bind( "click", function(event) {
-              event.preventDefault();
+          $( ".nav-item" ).on( "click", function(event) {
+            console.log("test");
+              // event.preventDefault();
               var clickedItem = $( this );
               $( ".nav-item" ).each( function() {
                   $( this ).removeClass( "active" );
@@ -133,7 +134,7 @@
               clickedItem.addClass( "active" );
           });
       });
-      </script>
+      </script> -->
       
   </body>
 </html>
