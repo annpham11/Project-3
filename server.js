@@ -6,6 +6,7 @@ if (port == null || port == "") {
 }
 
 
+// app.use(express.json);
 app.use(express.static('client/build'));
 
 app.listen(port, () => {
@@ -49,6 +50,10 @@ const quizMockData = [{
     ]
 }]
 
+app.get('/api', (req, res) => {
+  res.json({ "users": ["userOne", "userTwo", "userThree", "userFour"] })
+});
+
 app.get('/api/quizzes', (req, res) => {
     //const sql = "SELECT * FROM challenges order by id";
     //db.query(sql).then((dbRes) => {
@@ -56,3 +61,7 @@ app.get('/api/quizzes', (req, res) => {
     //});
     res.json(quizMockData);
   });
+app.post('/api/auth', (req, res) => {
+  console.log('user called sign in', req.body)
+  res.json({"message": "hello world"})
+})

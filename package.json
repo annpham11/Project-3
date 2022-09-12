@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npx nodemon"
+    "start": "npx nodemon",
+    "serve": "npm run start & cd client && npm run watch"
   },
   "repository": {
     "type": "git",

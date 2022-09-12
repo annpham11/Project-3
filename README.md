@@ -6,7 +6,8 @@
 
 ``` 
 npm install 
-npm install nodemon --save-dev 
+cd client
+npm install
 ```
 
 ## Start server 
@@ -16,20 +17,17 @@ npx nodemon
 or npm start 
 ``` 
 
-## Run dev server 
+## Run react app in dev mode 
 
 ``` 
 cd client
 npm start 
 ``` 
 
-## Build frontend and serve frontend with api
-
+## Spin up dev mode for server and react app
+This will serve react app from express but you have to refresh to see changes.
 ``` 
-cd client
-npm run build
-cd ..
-npm start
+npm run serve
 ```
 
 
