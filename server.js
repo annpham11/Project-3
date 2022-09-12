@@ -1,11 +1,16 @@
 const express = require('express'); 
 const app = express();
-const port = 3000; 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 const pg = require('pg')
 const bcrypt = require('bcrypt');
 const { expressSession, pgSession } = require('./session');
 const { generateHash, isValidPassword } = require('./util/hash');
 
+
+// app.use(express.json);
 app.use(express.static('client/build'));
 app.use(express.static("client"));
 app.use(express.json());
@@ -95,3 +100,4 @@ app.post('/trivia/logout', (req,res)=>{
 app.listen(port, () => {
     console.log(`listening at http://localhost:${port}`);
   })})
+
