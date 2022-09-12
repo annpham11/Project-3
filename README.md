@@ -32,3 +32,7 @@ npm run build
 cd ..
 npm start
 ```
+## Setting up SQL
+
+1. create a database called trivia_project 
+2. added 
