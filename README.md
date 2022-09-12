@@ -40,3 +40,7 @@ git add .
 git commit -m "heroku build"
 git push heroku BRANCH-NAME:main
 ```
+## Setting up SQL
+
+1. create a database called trivia_project 
+2. added 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trivia </title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <section class="sign-up">
+      <h1>Scavenger Hunt</h1>
+      <form id="signup_form">
+        <section id="errors"></section>
+        <fieldset>
+            <label for="">Username</label><br />
+          <input type="username" name="username" />
+        </fieldset>
+        <fieldset>
+          <label for="">Email</label><br />
+          <input type="text" name="email" />
+        </fieldset>
+        <fieldset>
+          <label for="">Password</label><br />
+          <input type="password" name="password" />
+        </fieldset>
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
+​
+    <script>
+      const form = document.getElementById('signup_form');
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const data = {
+          email: formData.get('email'),
+          password: formData.get('password')
+        };
+        axios.post('/trivia/signup', data).then(() => {
+          location = '/signup.html';
+        }).catch(() => {
+          if (err.response.status === 500) {
+            alert('failed to sign up. Please try again.');
+          } else {
+            alert(err.response.data.message);
+          }
+        });
+      })
+    </script>
+  </body>
+</html>
