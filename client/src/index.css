@@ -169,6 +169,10 @@ label {
   font-style: italic;
 }
 
+.title-table {
+  font-weight: 1000;
+  font-size: 1.5em;
+}
 /* Extra Responsive Content*/
 
 @media (max-width: 1028px) {
