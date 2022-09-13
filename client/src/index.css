@@ -149,14 +149,24 @@ footer {
 }
 
 .quiz {
-  padding-top: 5rem;
+  padding: 5% 30%;
+  text-align: left;
 }
 
 .question {
   margin-bottom: 1rem;
+  font-weight: 800;
+  font-size: 1.8em;
 }
+
 .btn {
   margin-bottom: 1rem;
+}
+
+label {
+  font-size: large;
+  font-weight: 400;
+  font-style: italic;
 }
 
 /* Extra Responsive Content*/

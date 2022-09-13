@@ -65,10 +65,10 @@
 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="index.html">About</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active">
                 <a class="nav-link" href="trivia.html">Trivia</a>
               </li>
               <li class="nav-item">
@@ -87,16 +87,39 @@
 
   <!-- Trivia -->
     <section class="colored-section" id="science_part">
-        <div class="containter-fluide quiz-science quiz">
+        <!-- <div class="container-fluid quiz-science quiz no-gutters">
             <h2 class="question">1. Dingos are wild dogs from which country?</h2>
-            <button class="answers-a btn col-6">South Africa</button>
+            <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
+<label class="btn btn-outline-success" for="success-outlined">South Africa</label>
+            <label class="btn col-6"><input type="radio" name="q_answer" value="1">South Africa</label>
             <button class="answers-b btn col-6">Australia</button>
             <button class="answers-c btn col-6">China</button>
             <button class="answers-d btn col-6">New Zealand</button>
-        </div>
+        </div> -->
         
-        <!-- <img class="quiz-bk" src="assets/science_qb.png" alt="quiz-bk"> -->
-      
+        <div class="container-fluid quiz-science quiz no-gutters mt-3">
+          <h2 class="question">1. Dingos are wild dogs from which country?</h2>
+          <form action="/action_page.php">
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>
+              <label class="form-check-label" for="radio1">South Africa</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">
+              <label class="form-check-label" for="radio2">Australia</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="radio3" name="optradio" value="option3">
+              <label class="form-check-label">China</label>
+            </div>
+            <div class="form-check" >
+              <input type="radio" class="form-check-input" id="radio4" name="optradio" value="option4">
+              <label class="form-check-label">New Zealand</label>
+            </div>
+            <button type="submit" class="btn mt-3 btn-light">Submit</button>
+          </form>
+          <div class="num_question"><span class="selected-num">1</span>/<span class="total-num">10</span></div>
+        </div>
     </section>
 
    <!-- Footer -->
@@ -115,19 +138,6 @@
       </div>
     </footer> 
 
-    <!-- Navigation Active-->
-    <script>
-      $(document).ready(function() {
-          $( ".nav-item" ).bind( "click", function(event) {
-              event.preventDefault();
-              var clickedItem = $( this );
-              $( ".nav-item" ).each( function() {
-                  $( this ).removeClass( "active" );
-              });
-              clickedItem.addClass( "active" );
-          });
-      });
-      </script>
       
   </body>
 </html>
