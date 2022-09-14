@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from 'react'; 
-import axios from './axios'; 
+import axios from '../axios'; 
 const LOGIN_URL = '/auth';
 
-const Login = () => {
+export const Login = () => {
     const userRef = useRef(); 
     const errRef = useRef();
 
