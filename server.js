@@ -1,5 +1,7 @@
 const express = require('express'); 
 const app = express();
+const path = require('path')
+require('dotenv').config()
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
@@ -12,7 +14,6 @@ const { generateHash, isValidPassword } = require('./util/hash');
 
 // app.use(express.json);
 app.use(express.static('client/build'));
-app.use(express.static("client"));
 app.use(express.json());
 
 const db = new pg.Pool({
@@ -26,11 +27,14 @@ app.use(
       createTableIfMissing: true, 
     }),
     secret: process.env.EXPRESS_SESSION_SECRET_KEY,
+    resave: true,
+    saveUninitialized: true
   })
 );
 
+
 // login page 
-app.get('/trivia/login', (req,res)=> {
+app.post('/trivia/login', (req,res)=> {
     const {email, password } = req.body;
   
     const sql = 'SELECT * FROM users WHERE email=$1';
@@ -72,32 +76,47 @@ app.post('/trivia/signup', (req,res)=> {
       res.status(500).json({});
     });
 
-    app.get('/trivia/session', (req, res) => {
-      const email = req.session.email;
-    
-      if (!email) {
-        return res.status(401).json({ message: 'Currently Not logged In' });
-      } else {
-        return res.json({ email: email });
-      }
-    });
-
-app.post('/trivia/logout', (req,res)=>{
-    if(req.session){
-      req.session.destroy(err => {
-        if(err){
-          res.status(400).send('Unable to logout')
-        } else {
-          res.send('logout successful')
-        }
-      }) 
-    }else {
-        res.end()
-    }
 })
 
-  
+
+app.get('/trivia/session', (req, res) => {
+  const email = req.session.email;
+
+  if (!email) {
+    return res.status(401).json({ message: 'Currently Not logged In' });
+  } else {
+    return res.json({ email: email });
+  }
+});
+
+app.get('/trivia/test', (req, res) => {
+  return res.json({ message: "successs" });
+
+});
+
+app.post('/trivia/logout', (req,res)=>{
+  if(req.session){
+    req.session.destroy(err => {
+      if(err){
+        res.status(400).send('Unable to logout')
+      } else {
+        res.send('logout successful')
+      }
+    }) 
+  }else {
+      res.end()
+  }
+})
+
+
+// https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
+
 app.listen(port, () => {
-    console.log(`listening at http://localhost:${port}`);
-  })})
+console.log(`listening at http://localhost:${port}`);
+})
+
 
