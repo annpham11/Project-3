@@ -2,17 +2,34 @@
 //Anything updated here will see automatically on the page  
 
 import React from 'react';
-import Login from './Login.js'; 
+//import Login from './Login.js'; 
+import { Routes, Route, Link } from "react-router-dom";
+import { About } from './components/About'
+import { Home } from './components/Home'
+import { Navbar } from './components/Navbar'
+import { Login } from './components/Login'
 
-
-function App() {
+function App() { 
   return (
-    <main className="App"> 
-    Hello 
-      <Login /> 
-    </main>
+    <div className="App">
+      <h1>Welcome to React Router!</h1>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </div>
   );
 }
+// function App() {
+//   return (
+//     <main className="App"> 
+//     Hello 
+//       <Login /> 
+//     </main>
+//   );
+// }
 
 
 // import logo from './logo.svg';
@@ -38,5 +55,7 @@ function App() {
 //     </div>
 //   );
 // }
+
+
 
 export default App;
