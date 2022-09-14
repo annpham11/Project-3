@@ -9,7 +9,8 @@
 /coverage
 
 # production
-/build
+# including so heroku can see it
+# /build
 
 # misc
 .DS_Store
