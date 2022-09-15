@@ -108,6 +108,57 @@ app.post('/trivia/logout', (req,res)=>{
   }
 })
 
+// updating a new quiz into the database
+
+app.put('/trivia_update/:id', (req,res) => {
+  const update = req.params.id;
+  const {category, title, picture, answer, fake_answer1, fake_answer2, fake_answer3} = req.body
+  
+  if (category === "" || title === "" || picture === ""||  fake_answer1 === "" || fake_answer2 === "" || fake_answer3 === "" )
+    return res.status(400).json({message: 'Please ensure that the entire form has been filled in '})
+
+    const sql = `UPDATE trivias SET category=$1, title=$2, picture=$3, answer=$4, fake_answer1=$5, fake-answer2=$6, fake_answer3=$7 WHERE id=$8`;
+    db.query(sql, [category, title, picture, answer, fake_answer1, fake_answer2, fake_answer3]).then((db) => {
+    res.sendStatus(200)
+})
+.catch((err) => {
+  res.sendStatus(500)
+})
+})
+
+// removing a trivia from the list 
+
+app.delete('/trivia_removal/:id',(req,res) => {
+ const id = req.params.id;
+
+ const query =  `SELECT * FROM trivias WHERE id=$1`;
+ db.query(query, [id]).then(() => {
+  res.json({});
+ })
+ .catch((err) => {
+  res.status(500).json({})
+ })
+})
+
+// adding a new trivia to the database
+
+app.post('/trivia_edit', (res,req)=> {
+  const {category, title, picture, answer, fake_answer1, fake_answer2, fake_answer3} = req.body
+  
+  if (category === "" || title === "" || picture === ""||  fake_answer1 === "" || fake_answer2 === "" || fake_answer3 === "" )
+    return res.status(400).json({message: 'Please ensure that the entire form has been filled in '})
+
+const sql = ` INSERT INTO trivias (category=$1, title=$2, picture=$3, answer=$4, fake_answer1=$5, fake-answer2=$6, fake_answer3=$7) `
+
+db.query(sql,[category, title, picture, answer, fake_answer1, fake_answer2, fake_answer3]).then((db) => {
+  res.sendStatus(200)
+})
+.catch((err)=> {
+  res.status(500).json({})
+})
+})
+
+
 
 // https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing
 app.get('/*', function (req, res) {
