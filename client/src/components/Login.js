@@ -69,7 +69,7 @@ export const Login = () => {
         <section> 
             <p ref={errRef} className={errMsg ? "errmsg" : 
             "offscreen"} aria-live="assertive">{errMsg}</p>
-            <h1>Sign In</h1>
+            <h1>Login</h1>
             {user}
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
@@ -92,7 +92,17 @@ export const Login = () => {
                     value={pwd} 
                     required 
                 />
-                <button>Sign In</button>
+
+                  <label htmlFor="email">Email:</label>
+                  <input 
+                    type="email"
+                    id="email"
+                    autoComplete="off" 
+                    onChange={(e) => setPwd(e.target.value)}
+                    value={pwd} 
+                    required 
+                />
+                <button>Login</button>
             </form>
             <p> 
                 Need an Account?<br /> 
