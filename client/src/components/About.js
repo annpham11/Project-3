@@ -3,15 +3,14 @@ export  function About() {
   return (
     <>
       <main>
-        <h2>Who are we?</h2>
+        <h2>Hello! jsdfjhds</h2>
         <p>
-          That feels like an existential question, don't you
-          think?
+          Welcome to time for trivia - we're a team of professional trivia, 
+          specialising in online trivia. 
+
+          Hover over to catergory and choose your quiz!! 
         </p>
       </main>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
     </>
   );
 }

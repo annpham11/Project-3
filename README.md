@@ -44,3 +44,23 @@ git push heroku BRANCH-NAME:main
 
 1. create a database called trivia_project 
 2. added 
+
+## Setting up Reacter Router 
+
+
+1. npm install react-router-dom@6 
+
+## to run backend
+pwd
+cd /Users/annpham/seifxr08anz/Projects/project-3/Project-3/client
+npm start
+
+## to run front end
+cd.../
+cd client
+npm start
+
+
+## to kill 3001
+netstat -vanp tcp | grep 3001
+kill -9 PID
