@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react'; 
+import { Link } from 'react-router-dom';
 import axios from '../axios'; 
-const LOGIN_URL = '/auth';
+const LOGIN_URL = '/login';
 
 export const Login = () => {
     const userRef = useRef(); 
@@ -24,7 +25,7 @@ export const Login = () => {
 
         try {
             const response = await axios.post(LOGIN_URL,
-                JSON.stringify({user, pwd}),
+                JSON.stringify({email:user, password: pwd}),
                 {
                     headers: { 'Content-type': 'application/json'},
                     withCredentials: true 
@@ -40,7 +41,7 @@ export const Login = () => {
             if (!err?.response) {
                 setErrMsg('No Server Response'); 
             } else if (err.response?.status === 400) {
-                setErrMsg('Missing Username or Password'); 
+                setErrMsg('Missing Email or Password'); 
             } else if (err.response?.status === 401) {
                 setErrMsg('Unauthorized'); 
             } else {
@@ -70,12 +71,12 @@ export const Login = () => {
             <p ref={errRef} className={errMsg ? "errmsg" : 
             "offscreen"} aria-live="assertive">{errMsg}</p>
             <h1>Sign In</h1>
-            {user}
+            {/* {user} */}
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
+                <label htmlFor="email">Email:</label>
                 <input 
                     type="text"
-                    id="username"
+                    id="email"
                     ref={userRef} 
                     autoComplete="off" 
                     onChange={(e) => setUser(e.target.value)}
@@ -98,7 +99,7 @@ export const Login = () => {
                 Need an Account?<br /> 
                 <span className="line">
                     {/* put router link here*/}
-                    <a href="#">Sign Up</a>
+                    <Link to='/signup'>Sign Up</Link>
                 </span>
             </p>
         </section>

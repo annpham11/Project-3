@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0f001c;
-  color: white;
+  background-color: #0f001c !important;
+  color: white !important;
   box-sizing: border-box;
   padding: 0;
 }
@@ -58,7 +58,7 @@ p {
 
 .category-item:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 0 0.75rem black);
+  filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
   z-index: 2;
 }
 .category-item .col-3 {
@@ -136,7 +136,7 @@ footer {
 }
 
 /* Trivia */
-/* li {
+li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -144,7 +144,7 @@ footer {
 img {
   max-width: 300px;
   width: 100%;
-} */
+} 
 /* Extra Responsive Content*/
 
 @media (max-width: 1028px) {
@@ -155,4 +155,7 @@ img {
   .title-image {
     position: static;
   }
-}
+} 
+
+
+
