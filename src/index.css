@@ -1,0 +1,217 @@
+body {
+  margin: 0.7rem 2%;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0f001c;
+  color: white;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito";
+}
+
+p {
+  color: white;
+}
+
+/* Containers */
+
+.container-fluid {
+  /* padding: 7% 15%; */
+}
+
+/* Sections */
+
+.colored-section {
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.category-btn {
+  margin-bottom: 3rem;
+}
+.category-item {
+  transition: all 0.2s ease-in-out;
+}
+
+.category-item:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 0.75rem black);
+  z-index: 2;
+}
+.category-item .col-3 {
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+
+.carousel-control-prev {
+  margin-left: -5%;
+}
+
+.carousel-control-next {
+  margin-right: -5%;
+}
+.testimonial-image {
+  width: 100%;
+}
+
+#testimonials {
+  margin-bottom: 2.5rem;
+}
+
+/* Navigation Bar */
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar {
+  padding: 0 0 1.5rem;
+}
+
+#logo {
+  width: 10rem;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Nunito";
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.active {
+  text-decoration: underline;
+  color: rgb(255, 255, 255);
+}
+
+/* Footer Section */
+footer {
+  border-top: 1px solid whitesmoke;
+  opacity: 0.7;
+}
+.copyright {
+  margin: 10px 0;
+  padding-left: 0;
+  text-align: left;
+}
+
+.social-icons {
+  text-align: right;
+  margin-right: 0px;
+}
+
+.social-icon {
+  margin: 10px 10px;
+}
+
+/* Trivia */
+
+#science_part {
+  background-image: url("assets/science_qb.png");
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 0;
+  margin: 1rem 0;
+  max-width: 100%;
+  height: 42.375rem;
+}
+
+.quiz {
+  padding: 5% 30%;
+  text-align: left;
+}
+
+.question {
+  margin-bottom: 1rem;
+  font-weight: 800;
+  font-size: 1.8em;
+}
+
+.btn {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: large;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.title-table {
+  font-weight: 1000;
+  font-size: 1.5em;
+}
+
+/*login page*/
+
+#login_form {
+  margin: 7% auto;
+  text-align: left;
+}
+
+#register_form {
+  margin: 2% auto;
+  text-align: left;
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+
+/* Extra Responsive Content*/
+
+@media (max-width: 1028px) {
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+  }
+}

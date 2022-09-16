@@ -46,7 +46,7 @@
   </head>
   <body>
     <header class="colored-section" id="title">
-      <div class="container-fluid colored-section" id="title">
+      <div class="container-fluid">
         <!-- Nav Bar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -65,10 +65,10 @@
 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="index.html">About</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active">
                 <a class="nav-link" href="trivia.html">Trivia</a>
               </li>
               <li class="nav-item">
@@ -85,30 +85,32 @@
         </nav>
       </header>
 
-  <!-- Carousel -->
-          <section class="colored-section" id="testimonials">
-          <div id="testimonial-carousel" class="carousel slide" data-ride="false">
-            <div class="carousel-inner">
-              <div class="carousel-item active container-fluid">
-                <img class="testimonial-image" src="carousel_1.svg" alt="Daily Fresh Trivia" />
-              </div>
-              <div class="carousel-item container-fluid">
-                <img class="testimonial-image" src="carousel_1.svg" alt="Daily Fresh Trivia" />
-              </div> 
-            </div>
-            <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
-            </a>
-          </div>
+  <!-- Trivia -->
+    <section class="colored-section" id="Category">
+         <div class="category-btn row no-gutters">
+                <a class="category-item col-3" href="trivia_science.html">
+                    <img src="assets/science_btn.png" alt="science_btn">
+                </a>
+
+                <a class="category-item col-3" href="trivia_movie.html">
+                    <img src="assets/movie_btn.png" alt="movie_btn">
+                </a>
+
+                <a class="category-item col-3" href="trivia_sports.html">
+                    <img src="assets/sports_btn.png" alt="sports_btn">
+                </a>
+
+                <a class="category-item col-3" href="trivia_music.html">
+                    <img src="assets/music_btn.png" alt="music_btn">
+                </a>
+            
+        </div>
     </section>
 
    <!-- Footer -->
    <footer class="colored-section" id="footer">
     
-      <div class="container-fluid colored-section">
+      <div class="container-fluid">
         <div class="row">
         <div class="col-6 copyright">© Copyright 2022 Trivia Lab</div>
         <div class="col-6 social-icons">
@@ -120,6 +122,7 @@
       </div>
       </div>
     </footer> 
+
       
   </body>
 </html>
