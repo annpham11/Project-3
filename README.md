@@ -33,7 +33,7 @@ cd ..
 git add .
 git commit -m "heroku build"
 git push heroku BRANCH-NAME:main
-heroku app: 
+heroku app: https://trivia-night01-app.herokuapp.com/ 
 
 
 ```
@@ -47,6 +47,16 @@ heroku app:
 ## Approach Taken
 - We approached this project, with the aim to create an application that gives the user the ability to login  and complete randomized quizzes consisting of 10 questions on different topics and categories
 - We choose to use React rather than sticking to just Javascript, in order to enhance user experience and reduce the amount of DOM manipulation required to achieve the desired result. React allows for faster rendering times as the application only needs to reload components that have changed state.
+
+## Digital Mockups
+Mockup created with Figma
+<a href="https://ibb.co/L820xtY"><img src="https://i.ibb.co/xDR21jX/Screen-Shot-2022-09-17-at-11-51-22-am.png" alt="Screen-Shot-2022-09-17-at-11-51-22-am" border="0" /></a> 
+
+
+## Database Flowchart 
+<a href="https://ibb.co/f4Pc90g"><img src="https://i.ibb.co/18wSM2g/Screen-Shot-2022-09-17-at-11-47-45-am.png" alt="Screen-Shot-2022-09-17-at-11-47-45-am" border="0"></a>
+
+
 
 ## Technologies Used
 - Node js (libraries)
