@@ -1,5 +1,5 @@
 body {
-  margin: 0.7rem 2%;
+  margin: 0.7rem auto;
   font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -35,9 +35,10 @@ p {
 }
 
 /* Containers */
-
-.container-fluid {
-  /* padding: 7% 15%; */
+#root {
+  margin: 10px auto;
+  max-width: 1200px;
+  text-align: center;
 }
 
 /* Sections */
@@ -45,6 +46,21 @@ p {
 .colored-section {
   color: white;
   max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  display: inline-block;
+  pointer-events: none;
+  min-height: 600px;
+  min-width: 1000px;
+}
+
+.coloredSection {
+  color: white;
+  max-width: 90%;
   margin: 0 auto;
   text-align: center;
 }
@@ -84,6 +100,16 @@ img {
 }
 
 /* Navigation Bar */
+
+#navbarElement {
+  margin-right: 0;
+  padding-right: 0;
+  text-align: right;
+  position: absolute;
+  width: auto;
+  left: 67%;
+  transform: translateX(-0%);
+}
 
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.7);
@@ -135,6 +161,11 @@ footer {
   margin: 10px 10px;
 }
 
+#login_form {
+  margin: 0 auto;
+  padding: 10%;
+}
+
 /* Trivia */
 li {
   list-style: none;
@@ -144,7 +175,17 @@ li {
 img {
   max-width: 300px;
   width: 100%;
-} 
+}
+
+#trivia_part {
+  background-image: url("/public/images/science_qb.png");
+  max-width: 1200px;
+  width: 100%;
+  height: 600px;
+  padding: 10%;
+  margin: 2% auto;
+}
+
 /* Extra Responsive Content*/
 
 @media (max-width: 1028px) {
@@ -156,6 +197,3 @@ img {
     position: static;
   }
 } 
-
-
-

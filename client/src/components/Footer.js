@@ -1,5 +1,12 @@
-import React from 'react';
-import { CDBFooter, CDBFooterLink, CDBBtn, CDBIcon, CDBContainer, CDBBox } from 'cdbreact';
+import React from "react";
+import {
+  CDBFooter,
+  CDBFooterLink,
+  CDBBtn,
+  CDBIcon,
+  CDBContainer,
+  CDBBox,
+} from "cdbreact";
 
 export const Footer = () => {
   return (
@@ -9,25 +16,19 @@ export const Footer = () => {
         justifyContent="between"
         alignItems="center"
         className="mx-auto py-4 flex-wrap"
-        style={{ width: '80%' }}
+        style={{ width: "100%" }}
       >
-        <CDBBox display="flex" alignItems="center">
-          
-        </CDBBox>
-        <CDBBox>
-          <small className="ml-2">&copy; 2022 Trivia Lab</small>
-        </CDBBox>
-        <CDBBox display="flex">
-          <CDBBtn flat color="dark" className="p-2">
-            <CDBIcon fab icon="facebook-f" />
-          </CDBBtn>
-          <CDBBtn flat color="dark" className="mx-3 p-2">
-            <CDBIcon fab icon="twitter" />
-          </CDBBtn>
-          <CDBBtn flat color="dark" className="p-2">
-            <CDBIcon fab icon="instagram" />
-          </CDBBtn>
-        </CDBBox>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-6 copyright">© Copyright 2022 Trivia Lab</div>
+            <div className="col-6 social-icons">
+              <i className="social-icon fab fa-facebook-f"></i>
+              <i className="social-icon fab fa-twitter"></i>
+              <i className="social-icon fab fa-instagram"></i>
+              <i className="social-icon fas fa-envelope"></i>
+            </div>
+          </div>
+        </div>
       </CDBBox>
     </CDBFooter>
   );

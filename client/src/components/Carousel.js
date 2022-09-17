@@ -1,32 +1,33 @@
-
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
-// import Carousel_1 from './src/assets/carousel_1.svg'; 
-
+import { Carousel } from "react-responsive-carousel";
+import { Link } from "react-router-dom";
 
 export class ImageCarousel extends Component {
-    render() {
-        return (
-            <Carousel>
-                <div>
-                    {/* <img src="/src/assets/movie_btn.png" /> */}
-                    <img src="/images/carousel_1.svg" />
-                    {/* <img src={Carousel_1} alt='Carousel_1' /> */}
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src="/images/movie_qb.png" />
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <img src="/images/music_btn.png" />
-                    <p className="legend">Legend 3</p>
-                </div>
-            </Carousel>
-        );
-    }
-};
+  render() {
+    return (
+      <section className="colored-section" id="Category">
+        <div className="category-btn row no-gutters">
+          <a className="category-item col-3" href="/trivia">
+            <img src="/images/science_btn.png" />
+          </a>
+
+          <a className="category-item col-3" href="/trivia">
+            <img src="/images/movie_btn.png" />
+          </a>
+
+          <a className="category-item col-3" href="/trivia">
+            <img src="/images/sports_btn.png" />
+          </a>
+
+          <a className="category-item col-3" href="/trivia">
+            <img src="/images/music_btn.png" />
+          </a>
+        </div>
+      </section>
+    );
+  }
+}
 
 export default ImageCarousel;
