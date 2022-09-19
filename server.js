@@ -131,14 +131,14 @@ app.post('/trivia/signup', (req, res) => {
     res.status(500).json({});
   });
 })
-app.get('/trivia/session', (req, res) => {
-  const email = req.session.email;
-  if (!email) {
-    return res.status(401).json({ message: 'Currently Not logged In' });
-  } else {
-    return res.json({ email: email });
-  }
-});
+// app.get('/trivia/session', (req, res) => {
+//   const email = req.session.email;
+//   if (!email) {
+//     return res.status(401).json({ message: 'Currently Not logged In' });
+//   } else {
+//     return res.json({ email: email });
+//   }
+// });
 
 app.post('/trivia/logout', (req, res) => {
   if (req.session) {

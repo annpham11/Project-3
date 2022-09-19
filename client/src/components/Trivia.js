@@ -4,23 +4,28 @@ import axios from "../axios";
 
 export const Trivia = () => {
   useEffect(() => {
-    const loggedIn = async () => {
-      const loggedIn = await axios.get("/session");
-      console.log(loggedIn);
-    };
+    // const loggedIn = async () => {
+    //   const loggedIn = await axios.get("/session");
+    //   console.log(loggedIn);
+    // };
     const fetchData = async () => {
-      const response = await axios.get("/quizzes");
-      console.log(response?.data);
-      const randomIndex = Math.floor(Math.random() * response.data.length);
-
-      const randomQuiz = response.data[randomIndex];
-
-      setQuestions(randomQuiz.questions);
-      setQuizTitle(randomQuiz.title);
+      try {
+        const response = await axios.get("/quizzes");
+        console.log(response?.data);
+        const randomIndex = Math.floor(Math.random() * response.data.length);
+  
+        const randomQuiz = response.data[randomIndex];
+  
+        setQuestions(randomQuiz.questions);
+        setQuizTitle(randomQuiz.title);
+      } catch ( err ) {
+        alert(err)
+      }
+      
     };
 
     // call the function
-    loggedIn();
+    // loggedIn();
     // make sure to catch any error
     //   .catch((window.location.href = "/"));
     // call the function
