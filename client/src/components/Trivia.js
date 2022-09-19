@@ -9,7 +9,10 @@ export const Trivia = () => {
     //   console.log(loggedIn);
     // };
 
-    axios.get("/quizzes")
+    axios.get("/quizzes", { headers:{  
+      "Content-Type": "application/json",
+      'Accept': 'application/json',
+    }} ) 
     .then(response => {
       const randomIndex = Math.floor(Math.random() * response.data.length);
   
