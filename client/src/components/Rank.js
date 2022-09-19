@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import styles from "../index.css";
 export function Rank() {
   return (
     <section class="colored-section" id="rank-section">

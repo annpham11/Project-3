@@ -32,8 +32,8 @@ export const Login = () => {
           withCredentials: true,
         }
       );
-      console.log(JSON.stringify(response?.data));
-      //console.log(JSON.stringify(response));
+      
+      
       const accessToken = response?.data?.accessToken;
       setUser("");
       setPwd("");
@@ -81,10 +81,10 @@ export const Login = () => {
                 {errMsg}
               </p>
               <h1>Sign In</h1>
-              {/* {user} */}
+              
               <form onSubmit={handleSubmit}>
                 <div className="form-outline mb-4">
-                  <label className="form-label" for="form3Example4">
+                  <label className="form-label" for="email">
                     Email address
                   </label>
                   <input
@@ -101,7 +101,7 @@ export const Login = () => {
                 </div>
 
                 <div className="form-outline mb-4">
-                  <label className="form-label" for="form3Example5">
+                  <label className="form-label" for="password">
                     Password
                   </label>
                   <input
@@ -123,7 +123,6 @@ export const Login = () => {
                 Need an Account?
                 <br />
                 <span className="line">
-                  {/* put router link here*/}
                   <Link to="/signup">Sign Up</Link>
                 </span>
               </p>
@@ -137,68 +136,3 @@ export const Login = () => {
 
 export default Login;
 
-// <div className="container-fluid h-custom vh-100 colored-section" id="login_form">
-//   <div className="row d-flex justify-content-center align-items-center h-100">
-//     <div className="col-md-9 col-lg-6 col-xl-5">
-//       <img src="assets/login_pic.png" className="img-fluid" alt="Sample image" />
-//     </div>
-//     <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-//       <form id="log-in-form">
-//         <section id="errors"></section>
-//         <!-- Email input -->
-//         <div className="form-outline mb-4">
-//           <label className="form-label" for="form3Example4">Email address</label>
-//           <input
-//             type="text"
-//             name="email"
-//             id="form3Example3"
-//             className="form-control form-control-lg"
-//             placeholder="Enter a valid email address"
-//           />
-//         </div>
-
-//         <!-- Password input -->
-//         <div className="form-outline mb-3">
-//           <label className="form-label" for="form3Example5">Password</label>
-//           <input
-//             type="password"
-//             name="password"
-//             id="form3Example4"
-//             className="form-control form-control-lg"
-//             placeholder="Enter password"
-//           />
-//         </div>
-
-//         <div className="d-flex justify-content-between align-items-center">
-//           <!-- Checkbox -->
-//           <div className="form-check mb-0">
-//             <input
-//               className="form-check-input me-2"
-//               type="checkbox"
-//               value=""
-//               id="form2Example3"
-//             />
-//             <label className="form-check-label" for="form2Example3">
-//               Remember me
-//             </label>
-//           </div>
-//           <a href="#!" className="text-body">Forgot password?</a>
-//         </div>
-
-//         <div className="text-right text-lg-start mt-4 pt-2">
-//           <button
-//             type="button"
-//             className="btn btn-primary btn-lg"
-//             style="padding-left: 2.5rem; padding-right: 2.5rem"
-//           >
-//             Login
-//           </button>
-//           <p className="small fw-bold mt-2 pt-1 mb-0">
-//             Don't have an account?
-//             <a href="register.html" className="link-danger">Register</a>
-//           </p>
-//         </div>
-//       </form>
-//     </div>
-//   </div>
-// </div>

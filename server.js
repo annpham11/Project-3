@@ -83,6 +83,7 @@ app.post('/trivia/signup', (req, res) => {
 
 app.get('/trivia/session', (req, res) => {
   const email = req.session.email;
+  console.log(email)
 
   if (!email) {
     return res.status(401).json({ message: 'Currently Not logged In' });
@@ -157,7 +158,6 @@ app.get('/trivia/quizzes', (req, res) => {
   console.log('hit trivia quitizz')
   const sql = `select * from trivias`
   db.query(sql, []).then((db, rows) => {
-    console.log(db, rows)
     const quizzes = {}
     // console.log(rows)
     for (const row of db.rows) {

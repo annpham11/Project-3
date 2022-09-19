@@ -133,7 +133,7 @@ export const Trivia = () => {
                     }
                   >
                     {answerOption.answerText}
-                  </button>{" "}
+                  </button>
                 </div>
               ))}
             </div>

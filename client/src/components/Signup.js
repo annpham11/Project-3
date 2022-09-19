@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "../axios";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
-// const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const SIGNUP_URL = "/signup";
 
 export const Signup = () => {
@@ -42,7 +41,6 @@ export const Signup = () => {
   }, [email]);
 
   useEffect(() => {
-    // setValidPwd(PWD_REGEX.test(pwd));
     setValidMatch(pwd === matchPwd);
   }, [pwd, matchPwd]);
 
@@ -52,13 +50,6 @@ export const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if button enabled with JS hack
-    const v1 = USER_REGEX.test(user);
-    // const v2 = PWD_REGEX.test(pwd);
-    // if (!v1 || !v2) {
-    //     setErrMsg("Invalid Entry");
-    //     return;
-    // }
     try {
       const response = await axios.post(
         SIGNUP_URL,
@@ -68,9 +59,7 @@ export const Signup = () => {
           withCredentials: true,
         }
       );
-      console.log(response?.data);
-      console.log(response?.accessToken);
-      console.log(JSON.stringify(response));
+      
       setSuccess(true);
       //clear state and controlled inputs
       //need value attrib on inputs for this
@@ -150,7 +139,7 @@ export const Signup = () => {
               </div>
 
               <div className="form-outline mb-4">
-                <label className="form-label" for="form3Example4">
+                <label className="form-label" for="email">
                   Email:
                 </label>{" "}
                 <input
@@ -171,7 +160,7 @@ export const Signup = () => {
               </div>
 
               <div className="form-outline mb-4">
-                <label className="form-label" for="form3Example4">
+                <label className="form-label" for="password">
                   Password:
                 </label>{" "}
                 <input
@@ -204,9 +193,6 @@ export const Signup = () => {
               </div>
 
               <div className="form-outline mb-4">
-                {/* <label className="form-label" for="form3Example4">
-                  Confirm Password::
-                </labelclassName="form-label" for="form3Example4">{" "} */}
                 <label htmlFor="confirm_pwd">Confirm Password:</label>
                 <input
                   type="password"
@@ -240,14 +226,13 @@ export const Signup = () => {
                   }
                 >
                   Sign Up
-                </button>{" "}
+                </button>
               </div>
             </form>
             <p>
               Already registered?
               <br />
               <span className="line">
-                {/*put router link here*/}
                 <Link to="/login">Log In</Link>
               </span>
             </p>

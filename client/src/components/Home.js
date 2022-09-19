@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import styles from "../index.css";
 export function Home() {
   return (
     <section class="colored-section" id="testimonials">
