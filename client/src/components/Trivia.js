@@ -8,28 +8,41 @@ export const Trivia = () => {
     //   const loggedIn = await axios.get("/session");
     //   console.log(loggedIn);
     // };
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("/quizzes");
-        console.log(response?.data);
-        const randomIndex = Math.floor(Math.random() * response.data.length);
+
+    axios.get("/quizzes")
+    .then(response => {
+      const randomIndex = Math.floor(Math.random() * response.data.length);
   
-        const randomQuiz = response.data[randomIndex];
+      const randomQuiz = response.data[randomIndex];
+
+      setQuestions(randomQuiz.questions);
+      setQuizTitle(randomQuiz.title);
+        }
+    )
+    .catch(err => alert(err))
+
+    // const fetchData = async () => {
+    //   try {
+    //     const response = await axios.get("/quizzes");
+    //     console.log(response?.data);
+    //     const randomIndex = Math.floor(Math.random() * response.data.length);
   
-        setQuestions(randomQuiz.questions);
-        setQuizTitle(randomQuiz.title);
-      } catch ( err ) {
-        alert(err)
-      }
+    //     const randomQuiz = response.data[randomIndex];
+  
+    //     setQuestions(randomQuiz.questions);
+    //     setQuizTitle(randomQuiz.title);
+    //   } catch ( err ) {
+    //     alert(err)
+    //   }
       
-    };
+    // };
 
     // call the function
     // loggedIn();
     // make sure to catch any error
     //   .catch((window.location.href = "/"));
     // call the function
-    fetchData();
+    // fetchData();
     // make sure to catch any error
     //   .catch((window.location.href = "/"));
 
