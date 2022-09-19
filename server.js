@@ -18,7 +18,8 @@ app.use(express.static('client/build'));
 app.use(express.json());
 
 const db = new pg.Pool({
-  database: "trivia_project",
+  // database: "trivia_project",
+  connectionString: process.env.DATABASE_URL || "trivia_project",
 })
 
 app.use(
